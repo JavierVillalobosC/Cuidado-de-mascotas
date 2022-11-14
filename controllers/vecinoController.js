@@ -8,7 +8,7 @@ const createVecino = (req, res) => {
         lastname,
         address,
         email,
-        phone,
+        phone
     })
     newVecino.save((error, vecino) => {
         if (error) {
