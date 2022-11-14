@@ -15,8 +15,8 @@ const createCuida = (req, res) => {
         return res.status(201).send(cuida)
     })
 }
-const getCuidados = (req, res) => {
-    Cuida.find({}).populate({ path: 'category status' }).exec((error, cuidador) => {
+const getCuidados = (req, res) => { //con la funcion getCuidados te muestra todos los que hay en esta tabla. Los cuidados
+    Cuida.find({}).populate({ path: 'category status' }).exec((error, cuidados) => {
         if (error) {
             return res.status(400).send({ message: "No se pudo realizar la busqueda" })
         }
@@ -26,9 +26,9 @@ const getCuidados = (req, res) => {
         return res.status(200).send(cuidados)
     })
 }
-const updateCuidado = (req, res) => {
+const updateCuidado = (req, res) => { //muestra el cuidado de 1 en especial
     const { id } = req.params
-    Cuidado.findByIdAndUpdate(id, req.body, (error, cuidado) => {
+    Cuida.findByIdAndUpdate(id, req.body, (error, cuidado) => {
         if (error) {
             return res.status(400).send({ message: "No se pudo actualizar el Cuidado" })
         }
@@ -41,7 +41,7 @@ const updateCuidado = (req, res) => {
 
 const deleteCuidado = (req, res) => {
     const { id } = req.params
-    Cuidado.findByIdAndDelete(id, (error, cuidado) => {
+    Cuida.findByIdAndDelete(id, (error, cuidado) => {
         if (error) {
             return res.status(400).send({ message: "No se ha podido eliminar el Cuidado" })
         }
@@ -54,7 +54,7 @@ const deleteCuidado = (req, res) => {
 
 const getCuidado = (req, res) => {
     const { id } = req.params
-    Cuidado.findById(id, (error, cuidado) => {
+    Cuida.findById(id, (error, cuidado) => {
         if (error) {
             return res.status(400).send({ message: "No se ha podido modificar el Cuidado" })
         }
