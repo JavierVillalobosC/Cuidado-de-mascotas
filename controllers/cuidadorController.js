@@ -23,10 +23,10 @@ const getCuidadors = (req, res) => {
         if (error) {
             return res.status(400).send({ message: "No se pudo realizar la busqueda" })
         }
-        if (cuidadors.length === 0) {
+        if (cuidador.length === 0) {
             return res.status(404).send({ message: "No se encontraron cuidadores" })
         }
-        return res.status(200).send(cuidadors)
+        return res.status(200).send(cuidador)
     })
 }
 
