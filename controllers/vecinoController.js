@@ -1,7 +1,7 @@
 const Vecino = require('../models/vecino');
 
 const createVecino = (req, res) => {
-    const { rut, name, lastname, address, email, phone,} = req.body
+    const { rut, name, lastname, address, email, phone} = req.body
     const newVecino = new Vecino({
         rut,
         name,
