@@ -5,9 +5,18 @@ const dotenv = require('dotenv');
 const app = express();
 dotenv.config();
 
+const cuidadorRoutes = require('./routes/cuidadorRoutes');
+const cuidaRoutes = require('./routes/cuidaRoutes');
+const mascotaRoutes = require('./routes/mascotaRoutes');
+const vecinoRoutes = require('./routes/vecinoRoutes');
+
 app.use(cors());
 app.use(express.json());
 app.options('*', cors());
+app.use('/api', cuidadorRoutes);
+app.use('/api', cuidaRoutes);
+app.use('/api', mascotaRoutes);
+app.use('/api', vecinoRoutes);
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);

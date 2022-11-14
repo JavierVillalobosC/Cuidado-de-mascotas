@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const Schema = mongoose.Schema;
 const mascotaSchema = new Schema({
     code:{
@@ -36,9 +37,8 @@ const mascotaSchema = new Schema({
         maxLength: 500
     },
     vecino:{
-        type:Schema.ObjectI,
-        ref: vecino,
-        required: true
+        type: Schema.Types.ObjectId,
+        ref: 'vecino'
     }
 
 })

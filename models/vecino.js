@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const Schema = mongoose.Schema;
 const vecinoSchema = new Schema({
     rut:{
@@ -36,9 +37,8 @@ const vecinoSchema = new Schema({
         maxLength: 100
     },
     mascota:{
-        type:Schema.ObjectId,
-        ref: mascota,
-        required: true
+        type: Schema.Types.ObjectId,
+        ref: 'mascota'
     }
 
 })

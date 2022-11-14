@@ -1,23 +1,24 @@
 const mongoose = require('mongoose');
+const cuidador = require('./cuidador');
+const mascota = require('./mascota');
 const Schema = mongoose.Schema;
 const cuidaSchema = new Schema({
     cuidador:{
-        type:Schema.ObjectId,
-        required: true 
-        },
-        mascota:{
-        type:Schema.ObjectId,
-        ref: mascota,
-        required: true 
-        },
-        hora_de_ingreso: {
-            type: Date,
-            default: Date.now()
-        },
-        hora_de_retiro: {
-            type: Date,
-            default: Date.now()
-        }
+    type: Schema.Types.ObjectId,
+    ref: cuidador,
+    },
+    mascota:{
+    type: Schema.Types.ObjectId,
+    ref: mascota,
+    },
+    hora_de_ingreso: {
+    type: Date,
+    default: Date.now()
+    },
+    hora_de_retiro: {
+    type: Date,
+    default: Date.now()
+    }
 
 })
 
