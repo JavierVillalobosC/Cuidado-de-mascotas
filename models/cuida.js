@@ -12,12 +12,14 @@ const cuidaSchema = new Schema({
     ref: mascota,
     },
     hora_de_ingreso: {
-    type: Date,
-    default: Date.now()
+    type: String,
+    minLenght: 1,
+    maxLenght: 10
     },
     hora_de_retiro: {
-    type: Date,
-    default: Date.now()
+    type: String,
+    minLenght: 1,
+    maxLenght: 10
     }
 
 })
