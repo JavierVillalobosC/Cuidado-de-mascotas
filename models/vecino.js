@@ -35,12 +35,7 @@ const vecinoSchema = new Schema({
         required: true,
         minLength: 1,
         maxLength: 100
-    },
-    mascota:{
-        type: Schema.Types.ObjectId,
-        ref: 'mascota'
     }
-
 })
 
 module.exports = mongoose.model('vecino', vecinoSchema);

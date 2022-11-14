@@ -2,7 +2,7 @@ const Mascota = require('../models/mascota');
 
 const createMascota = (req, res) => {
     const { code, type, name, raza, age, features, vecino } = req.body
-    const newMascota = new mascota({
+    const newMascota = new Mascota({
         code,
         type,
         name,
@@ -27,7 +27,7 @@ const getMascotas = (req, res) => {
         if (mascota.length === 0) {
             return res.status(404).send({ message: "No se encontraron las Mascotas" })
         }
-        return res.status(200).send(mascotas)
+        return res.status(200).send(mascota)
     })
 }
 
