@@ -6,8 +6,8 @@ const app = express();
 dotenv.config();
 
 const cuidadorRoutes = require('./routes/cuidadorRoutes');
-const ingresaRoutes = require('./routes/ingresaRoutes');
-const retirasaRoutes = require('./routes/retirasaRoutes');
+const ingresoRoutes = require('./routes/ingresoRoutes');
+const retiroRoutes = require('./routes/retiroRoutes');
 const mascotaRoutes = require('./routes/mascotaRoutes');
 const vecinoRoutes = require('./routes/vecinoRoutes');
 const fileRoutes = require('./routes/fileRoutes');
