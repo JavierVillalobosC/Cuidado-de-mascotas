@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 const cuidador = require('./cuidador');
 const mascota = require('./mascota');
 const Schema = mongoose.Schema;
-const cuidaSchema = new Schema({
+const fecha = new Date
+
+const RetiroSchema = new Schema({
     cuidador:{
     type: Schema.Types.ObjectId,
     ref: cuidador,
@@ -11,17 +13,10 @@ const cuidaSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: mascota,
     },
-    hora_de_ingreso: {
-    type: String,
-    minLenght: 1,
-    maxLenght: 10
-    },
     hora_de_retiro: {
-    type: String,
-    minLenght: 1,
-    maxLenght: 10
-    }
+    type: fecha.toLocaleDateString('es-ES')
+    },
 
 })
 
-module.exports = mongoose.model('cuida', cuidaSchema);
+module.exports = mongoose.model('retiro', RetiroSchema);
