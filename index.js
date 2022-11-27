@@ -10,6 +10,7 @@ const cuidaRoutes = require('./routes/cuidaRoutes');
 const mascotaRoutes = require('./routes/mascotaRoutes');
 const vecinoRoutes = require('./routes/vecinoRoutes');
 const fileRoutes = require('./routes/fileRoutes');
+const comentarioRoutes = require('./routes/comentarioRoutes')
 
 app.use(cors());
 app.use(express.json());
@@ -19,6 +20,7 @@ app.use('/api', cuidaRoutes);
 app.use('/api', mascotaRoutes);
 app.use('/api', vecinoRoutes);
 app.use('/api', fileRoutes);
+app.use('/api', comentarioRoutes);
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
