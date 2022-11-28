@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const cuidador = require('./cuidador');
 const mascota = require('./mascota');
 const Schema = mongoose.Schema;
-const fecha = new Date
 
 const RetiroSchema = new Schema({
     cuidador:{
@@ -14,7 +13,8 @@ const RetiroSchema = new Schema({
     ref: mascota,
     },
     hora_de_retiro: {
-    type: fecha.toLocaleDateString('es-ES')
+    type: Date,
+    default: Date.now()
     },
 
 })
