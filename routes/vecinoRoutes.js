@@ -1,7 +1,7 @@
 const express = require('express');
 const api = express.Router();
 const vecinoController = require('../controllers/vecinoController');
-const validateCreate = require('../validators/validacion_persona')
+const { validateCreate } = require('../validators/validacion_persona');
 
 api.post('/vecino', validateCreate, vecinoController.createVecino );
 api.get('/vecinos', vecinoController.getVecinos);

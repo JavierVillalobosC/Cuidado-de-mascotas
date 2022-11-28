@@ -14,9 +14,9 @@ const IngresoSchema = new Schema({
     ref: mascota,
     },
     vecino:{
-        type: Schema.Types.ObjectId,
-        ref: vecino,
-        },
+    type: Schema.Types.ObjectId,
+    ref: vecino,
+    },
     hora_de_ingreso: {
     type: Date,
     default: Date.now

@@ -1,7 +1,7 @@
 const express = require('express');
 const api = express.Router();
 const cuidadorController = require('../controllers/cuidadorController');
-const validateCreate = require('../validators/validacion_persona')
+const { validateCreate } = require('../validators/validacion_persona')
 
 api.post('/cuidador', validateCreate, cuidadorController.createCuidador);
 api.get('/cuidadores', cuidadorController.getCuidadors);

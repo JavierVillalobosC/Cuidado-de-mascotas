@@ -2,7 +2,7 @@ const { check } = require('express-validator')
 const { validateResult } = require('../helpers/validators')
 
 const validateCreate = [
-    check('rut')
+    check('type')
         .exists()
         .not()
         .isEmpty(),
@@ -10,17 +10,24 @@ const validateCreate = [
         .exists()
         .not()
         .isEmpty(),
-    check('lastname')
+    check('raza')
         .exists()
         .not()
         .isEmpty(),
-    check('email')
-        .exists()
-        .isEmail(),
-    check('phone')
+    check('age')
         .exists()
         .isEmpty()
-        .isNumeric(),
+        .isNumeric()
+        .custom((value, { req }) => {
+            if (value > 1|| value < 20) {
+                throw new Error('Rango de edad debe ser entre 1 y 20')
+            }
+            return true
+        }),
+    check('features')
+        .exists()
+        .not()
+        .isEmpty(),
     (req, res, next) => {
         validateResult(req, res, next)
     },

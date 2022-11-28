@@ -1,13 +1,18 @@
 const Comentario = require('../models/comentario')
 
 const createComentario = (req,res) => {
-    const { comments } = req.body
+    const { vecino,comments, calification } = req.body
     const newComentario = new Comentario ({
-        comments
+        vecino,
+        comments,
+        calification
     })
-    newComentario.save((error,comentario) =>{
+    newComentario.save((error,vecino,comentario) =>{
         if (error) {
             return res.status(400).send({ message: "No se ha podido crear el comentario" })
+        }
+        if (!vecino){
+            return res.status(400).send({ message: "No existe el vecino" })
         }
         return res.status(201).send(comentario)
     })
