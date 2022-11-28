@@ -15,6 +15,9 @@ const createMascota = (req, res) => {
         if (error) {
             return res.status(400).send({ message: "No se ha podido crear la Mascota" })
         }
+        if (!vecino){
+            return res.status(400).send({ message: "No existe el vecino" })
+        }
         return res.status(201).send(mascota)
     })
 }
