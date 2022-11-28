@@ -12,6 +12,9 @@ const createIngreso = (req, res) => {
         if (error) {
             return res.status(400).send({ message: "No se ha podido crear el ingreso" })
         }
+        if (!vecino){
+            return res.status(400).send({ message: "No existe el vecino" })
+        }
         return res.status(201).send(ingreso)
     })
 }
