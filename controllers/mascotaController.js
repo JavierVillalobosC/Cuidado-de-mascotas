@@ -1,9 +1,8 @@
 const Mascota = require('../models/mascota');
 
 const createMascota = (req, res) => {
-    const { code, type, name, raza, age, features, vecino } = req.body
+    const { type, name, raza, age, features, vecino } = req.body
     const newMascota = new Mascota({
-        code,
         type,
         name,
         raza,
