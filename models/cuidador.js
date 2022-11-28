@@ -17,12 +17,6 @@ const cuidadorSchema = new Schema({
         minLength: 1,
         maxLength: 100
     },
-    address: {
-        type: String,
-        required: true,
-        minLength: 1,
-        maxLength: 250
-    },
     email: {
         type: String,
         required: true,

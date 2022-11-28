@@ -10,9 +10,12 @@ const createVecino = (req, res) => {
         email,
         phone
     })
-    newVecino.save((error, vecino) => {
+    newVecino.save((error, rut, vecino) => {
         if (error) {
             return res.status(400).send({ message: "No se ha podido crear el Vecino" })
+        }
+        if (!rut) {
+            return res.status(400).send({ message: "No existe el vecino" })
         }
         return res.status(201).send(vecino)
     })

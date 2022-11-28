@@ -1,12 +1,11 @@
 const Cuidador = require('../models/cuidador');
 
 const createCuidador = (req, res) => {
-    const { rut, name, lastname, address, email, phone } = req.body
+    const { rut, name, lastname, email, phone } = req.body
     const newCuidador = new Cuidador({
         rut,
         name,
         lastname,
-        address,
         email,
         phone
     })
