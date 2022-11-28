@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const cuidador = require('./cuidador');
 const mascota = require('./mascota');
+const vecino = require('./vecino');
 const Schema = mongoose.Schema;
 
 const RetiroSchema = new Schema({
@@ -11,6 +12,10 @@ const RetiroSchema = new Schema({
     mascota:{
     type: Schema.Types.ObjectId,
     ref: mascota,
+    },
+    vecino:{
+    type: Schema.Types.ObjectId,
+    ref: vecino,
     },
     hora_de_retiro: {
     type: Date,

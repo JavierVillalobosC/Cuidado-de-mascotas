@@ -1,10 +1,11 @@
 const Ingreso = require('../models/ingreso');
 
 const createIngreso = (req, res) => {
-    const { cuidador, mascota, hora_de_ingreso} = req.body
+    const { cuidador, mascota, vecino, hora_de_ingreso} = req.body
     const newIngreso = new Ingreso({
         cuidador,
         mascota,
+        vecino,
         hora_de_ingreso
     })
     newIngreso.save((error, ingreso) => {

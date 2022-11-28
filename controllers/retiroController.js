@@ -1,10 +1,11 @@
 const Retiro = require('../models/retiro');
 
 const createRetiro = (req, res) => {
-    const { cuidador, mascota, hora_de_retiro} = req.body
+    const { cuidador, mascota, vecino, hora_de_retiro} = req.body
     const newRetiro = new Retiro({
         cuidador,
         mascota,
+        vecino,
         hora_de_retiro
     })
     newRetiro.save((error, retiro) => {
