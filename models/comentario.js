@@ -5,6 +5,7 @@ const comentarioSchema = new Schema({
     vecino:{
         type: Schema.Types.ObjectId,
         ref: vecino,
+        require: true
     },
     comments:{
         type: String,
