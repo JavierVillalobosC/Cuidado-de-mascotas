@@ -17,13 +17,7 @@ const validateCreate = [
     check('age')
         .exists()
         .isEmpty()
-        .isNumeric()
-        .custom((value, { req }) => {
-            if (value > 1|| value < 20) {
-                throw new Error('Rango de edad debe ser entre 1 y 20')
-            }
-            return true
-        }),
+        .isNumeric(),
     check('features')
         .exists()
         .not()
