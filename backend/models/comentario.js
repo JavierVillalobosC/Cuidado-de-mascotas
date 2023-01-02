@@ -4,7 +4,7 @@ const vecino = require('./vecino');
 const comentarioSchema = new Schema({
     vecino:{
         type: Schema.Types.ObjectId,
-        ref: vecino,
+        ref: 'vecino',
         require: true
     },
     comments:{
