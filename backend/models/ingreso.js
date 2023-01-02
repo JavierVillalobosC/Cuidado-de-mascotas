@@ -7,15 +7,15 @@ const Schema = mongoose.Schema;
 const IngresoSchema = new Schema({
     cuidador:{
     type: Schema.Types.ObjectId,
-    ref: cuidador,
+    ref: 'cuidador',
     },
     mascota:{
     type: Schema.Types.ObjectId,
-    ref: mascota,
+    ref: 'mascota',
     },
     vecino:{
     type: Schema.Types.ObjectId,
-    ref: vecino,
+    ref:'vecino'
     },
     hora_de_ingreso: {
     type: Date,

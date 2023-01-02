@@ -1,5 +1,5 @@
 const Ingreso = require('../models/ingreso');
-
+const vecino = require('../models/vecino')
 const createIngreso = (req, res) => {
     const { cuidador, mascota, vecino, hora_de_ingreso} = req.body
     const newIngreso = new Ingreso({
@@ -31,7 +31,7 @@ const getIngreso = (req, res) => {
     })
 }
 const getIngresos = (req, res) => {
-    Ingreso.find({}).populate({ path: 'category status' }).exec((error, ingresos) => {
+    Ingreso.find({}).populate({ path: 'vecino' }).exec((error, ingresos) => {
         if (error) {
             return res.status(400).send({ message: "No se pudo realizar la busqueda" })
         }

@@ -9,6 +9,7 @@ const ingresos = () => {
 
     const getIngres = async () => {
         const response = await axios.get(`${process.env.API_URL}/ingresos`)
+        console.log(response);
         setIngres(response.data)
     }
 
@@ -18,12 +19,20 @@ const ingresos = () => {
 
 
     const showProducts = () => {
-        return ingres.map(ingreso => {
+        return ingres.map((ingreso, index) => {
+        
+    const fecha = new Date(ingreso.hora_de_ingreso);
+    const fechaFormateada = fecha.toLocaleDateString("es-ES", {
+        day: "numeric",
+        month: "numeric",
+        year: "numeric",
+        hour: "2-digit"
+    });
             return (
                 <Tr key={ingreso._id}>
-                    <Td>{ingreso.dueño}</Td>
-                    <Td>{ingreso.mascota}</Td>
-                    <Td>{ingreso.hora_de_ingresos}</Td>
+                    <Td>{ingreso.vecino.name}</Td>
+                    <Td>{ingreso.mascota.name}</Td>
+                    <Td>{fechaFormateada}</Td>
                 </Tr>
             )
         })
