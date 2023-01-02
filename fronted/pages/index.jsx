@@ -15,7 +15,7 @@ export default function Home() {
 
   const onvecino = async (e) => {
 		e.preventDefault()
-		router.push('/ingresos')
+    router.push('/ingresos')
 	}
 
   return (

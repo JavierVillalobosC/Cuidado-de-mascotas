@@ -16,6 +16,7 @@ const mailerRoutes = require('./routes/mailerRoutes');
 
 app.use(cors());
 app.use(express.json());
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.options('*', cors());
 app.use('/api', cuidadorRoutes);
 app.use('/api', retiroRoutes);

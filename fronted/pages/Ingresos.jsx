@@ -4,23 +4,25 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 
 const ingresos = () => {
-    const [ingresos, setIngresos] = useState([])
+    const [ingres, setIngres] = useState([])
     const router = useRouter()
 
-    const getIngresos = async () => {
+    const getIngres = async () => {
         const response = await axios.get(`${process.env.API_URL}/ingresos`)
-        setIngresos(response.data)
+        setIngres(response.data)
     }
 
     useEffect(() => {
-        getIngresos ()
+        getIngres()
     }, [])
 
 
     const showProducts = () => {
-        return ingresos.map(ingreso => {
+        return ingres.map(ingreso => {
             return (
                 <Tr key={ingreso._id}>
+                    <Td>{ingreso.dueño}</Td>
+                    <Td>{ingreso.mascota}</Td>
                     <Td>{ingreso.hora_de_ingresos}</Td>
                 </Tr>
             )
@@ -33,6 +35,8 @@ const ingresos = () => {
             <Table variant="simple">
                 <Thead>
                     <Tr>
+                        <Td>Dueño</Td>
+                        <Td>Mascota</Td>
                         <Td>Hora de ingreso</Td>
                     </Tr>
                 </Thead>
