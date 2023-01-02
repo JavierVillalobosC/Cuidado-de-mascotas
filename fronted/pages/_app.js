@@ -1,12 +1,14 @@
 import '../styles/globals.css'
-import {ChakraProvider} from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
+import axios from 'axios'
 
-function App({ Component, pageProps }) {
-  return(
+function MyApp({ Component, pageProps }) {
+  axios.defaults.withCredentials = true;
+  return (
     <ChakraProvider>
-    <Component {...pageProps} />
+      <Component {...pageProps} />
     </ChakraProvider>
   )
 }
 
-export default App
+export default MyApp
