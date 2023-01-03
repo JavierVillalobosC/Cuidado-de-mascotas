@@ -41,7 +41,6 @@ const ingreso = ({ data }) => {
                 <ShowInfo tag="id" data={ingres.id} color="blue.500" />
                 <HStack>
                     <ShowInfo tag="Hora de ingresos" data={ingres.hora_de_ingreso} color="yellow.500" />
-                    
                 </HStack>
             </Stack>
         </Container>

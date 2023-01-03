@@ -3,31 +3,31 @@ import { Button, Container, Input, Stack, Text, HStack, Table, Thead, Tbody, Tfo
 import axios from 'axios'
 import { useRouter } from 'next/router'
 
-const ingresos = () => {
-    const [ingres, setIngres] = useState([])
+const retiros = () => {
+    const [retirs, setRetirs] = useState([])
     const router = useRouter()
 
-    const getIngres = async () => {
-        const response = await axios.get(`${process.env.API_URL}/ingresos`)
+    const getRetirs = async () => {
+        const response = await axios.get(`${process.env.API_URL}/retiros`)
         console.log(response);
-        setIngres(response.data)
+        setRetirs(response.data)
     }
 
     useEffect(() => {
-        getIngres()
+        getRetirs()
     }, [])
 
 
-    const showIngresos = () => {
-        return ingres.map((ingreso, index) => {
+    const showRetiros = () => {
+        return retirs.map((retiro, index) => {
 
-    const fecha = new Date(ingreso.hora_de_ingreso);
+    const fecha = new Date(retiro.hora_de_retiro);
     const fechaFormateada = fecha.toLocaleDateString("en-US", { hour12: false });
             return (
-                <Tr key={ingreso._id}
+                <Tr key={retiro._id}
                 _hover={{background: "rgb( 0 0 0 / 5% )", }}>
-                    <Td textAlign="center">{ingreso.vecino.name}</Td>
-                    <Td textAlign="center">{ingreso.mascota.name}</Td>
+                    <Td textAlign="center">{retiro.vecino.name}</Td>
+                    <Td textAlign="center">{retiro.mascota.name}</Td>
                     <Td textAlign="center">{fechaFormateada}</Td>
                 </Tr>
             )
@@ -36,21 +36,21 @@ const ingresos = () => {
 
     return (
         <Container maxW="container.xl" centerContent>
-            <Heading textAlign={"center"} my={10}>Ingresos</Heading>
+            <Heading textAlign={"center"} my={10}>Retiros</Heading>
             <Table variant="simple">
                 <Thead>
                     <Tr>
                         <Td textAlign="center">Dueño</Td>
                         <Td textAlign="center">Mascota</Td>
-                        <Td textAlign="center">Fecha de ingreso</Td>
+                        <Td textAlign="center">Fecha de retiro</Td>
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {showIngresos()}
+                    {showRetiros()}
                 </Tbody>
             </Table>
         </Container>
     )
 }
 
-export default ingresos
+export default retiros

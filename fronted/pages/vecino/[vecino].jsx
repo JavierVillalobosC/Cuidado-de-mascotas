@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import { Container, Heading, Text, Button, Stack, Input, FormControl, FormLabel, Textarea } from '@chakra-ui/react'
-import { getVecinos } from '../../../data/vecinos'
+//import { getVecinos } from '../../../data/vecinos'
 import { getVecino } from '../../../backend/controllers/vecinoController'
 
 export async function getServerSideProps(context) {
