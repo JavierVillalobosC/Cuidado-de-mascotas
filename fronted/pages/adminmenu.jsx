@@ -42,6 +42,16 @@ export default function adminmenu() {
 		router.push('/cuidadores')
 	}
 
+	const onhoraingreso = async (e) => {
+		e.preventDefault()
+		router.push('/horaingreso')
+	}
+
+	const onretiromascota = async (e) => {
+		e.preventDefault()
+		router.push('/retiromascota')
+	}
+
   return (
 
     <Container maxW="container.xl" centerContent>
@@ -52,7 +62,8 @@ export default function adminmenu() {
 			<Button colorScheme="teal" onClick={onvermascotas} size='lg'> Ver Mascotas</Button>
 			<Button colorScheme="teal" onClick={onvecinos} size='lg'> Ver Vecinos</Button>
 			<Button colorScheme="teal" onClick={oncuidadores} size='lg'> Ver Cuidadores</Button>
-
+			<Button colorScheme="teal" onClick={onhoraingreso} size='lg'> Crear ingreso</Button>
+			<Button colorScheme="teal" onClick={onretiromascota} size='lg'> Crear retiro mascota</Button>
 			</Stack>
             <Stack direction ='row' spacing={4} py='4'>
 			<Button colorScheme="teal" onClick={oncrearmascotas} size='lg'> Ingresar Mascotas</Button>
