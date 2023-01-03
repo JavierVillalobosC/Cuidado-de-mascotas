@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Textarea, Button, Container, Input, Stack, Text, HStack, Heading, FormControl, FormLabel} from '@chakra-ui/react'
 import axios from 'axios'
 
-const mascotas = () => {
+const crearmascotas = () => {
 
     const [values,setValues] = useState({
         type: '',
@@ -59,4 +59,4 @@ const mascotas = () => {
     )
 }
 
-export default mascotas
+export default crearmascotas

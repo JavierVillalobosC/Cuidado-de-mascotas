@@ -15,11 +15,21 @@ export default function adminmenu() {
 
   const oningresos= async (e) => {
 		e.preventDefault()
-    router.push('/ingresos')
+    router.push('/Ingresos')
 	}
   const oncomments= async (e) => {
 		e.preventDefault()
     router.push('/comentarios')
+	}
+
+	const oncrearmascotas = async (e) => {
+		e.preventDefault()
+		router.push('/crearmascotas')
+	}
+
+	const onvermascotas = async (e) => {
+		e.preventDefault()
+		router.push('/vermascotas')
 	}
 
   return (
@@ -29,8 +39,10 @@ export default function adminmenu() {
 			<Stack direction ='row' spacing={4}>
 			<Button colorScheme="teal" onClick={onretiros} size='lg'> Ver Retiros</Button>
             <Button colorScheme="teal" onClick={oningresos} size='lg'> Ver Ingresos</Button>
+			<Button colorScheme="teal" onClick={onvermascotas} size='lg'> Ver Mascotas</Button>
 			</Stack>
             <Stack direction ='row' spacing={4} py='4'>
+			<Button colorScheme="teal" onClick={oncrearmascotas} size='lg'> Ingresar Mascotas</Button>
 			<Button colorScheme="teal" onClick={oncomments} size='lg'> Dejar un comentario</Button>
 			</Stack>
             <Stack direction ='row' py='10'>
