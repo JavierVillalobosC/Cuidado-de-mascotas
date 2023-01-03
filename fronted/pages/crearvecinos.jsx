@@ -79,7 +79,7 @@ const vecinos = () => {
 				</FormControl>
                 <FormControl>
 					<FormLabel>Correo</FormLabel>
-					<Textarea placeholder="Correo" onChange={onChange} name={"email"} />
+					<Input placeholder="Correo" onChange={onChange} name={"email"} />
 				</FormControl>
                 <FormControl>
 					<FormLabel>Número</FormLabel>

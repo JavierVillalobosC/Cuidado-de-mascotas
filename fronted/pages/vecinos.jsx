@@ -27,7 +27,6 @@ const vecinos = () => {
                     <Td>{vecino.address}</Td>
                     <Td>{vecino.email}</Td>
                     <Td>{vecino.phone}</Td>
-                    <Td><Button onClick={() => router.push(`/vecino/ver/${vecino._id}`)}>Ver mas</Button></Td>
                 </Tr>
             )
         })
@@ -36,7 +35,7 @@ const vecinos = () => {
     return (
         <Container maxW="container.xl" centerContent>
             <Heading textAlign={"center"} my={10}>Vecinos</Heading>
-            <Button colorScheme="teal" onClick={() => router.push('/vecino/crear')}>Crear Vecino</Button>
+            <Button colorScheme="teal" onClick={() => router.push('/crearvecinos')}>Crear Vecino</Button>
             <Table variant="simple">
                 <Thead>
                     <Tr>
