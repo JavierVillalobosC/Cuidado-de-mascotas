@@ -40,9 +40,12 @@ const vecinos = () => {
             <Table variant="simple">
                 <Thead>
                     <Tr>
-                        <Td>Nombre</Td>
                         <Td>Rut</Td>
-                        <Td>Mascota</Td>
+                        <Td>Nombre</Td>
+                        <Td>Apellido</Td>
+                        <Td>Dirección</Td>
+                        <Td>Correo</Td>
+                        <Td>Número</Td>
                     </Tr>
                 </Thead>
                 <Tbody>
