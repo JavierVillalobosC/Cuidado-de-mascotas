@@ -9,7 +9,7 @@ const mascotas = () => {
 
     const getMascotas = async () => {
         const response = await axios.get(`${process.env.API_URL}/mascotas`)
-        setMascota(response.data)
+        setMascotas(response.data)
     }
     useEffect(() => {
         getMascotas()
